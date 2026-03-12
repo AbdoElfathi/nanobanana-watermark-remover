@@ -1,0 +1,73 @@
+{
+  "name": "gemini-watermark-tool",
+  "version": "0.2.5",
+  "description": "A tool to add/remove Gemini-style visible watermarks using reverse alpha blending",
+  "homepage": "https://github.com/allenk/GeminiWatermarkTool",
+  "license": "MIT",
+  "supports": "(windows & x64) | (linux & x64) | (osx & (x64 | arm64)) | android",
+  "dependencies": [
+    {
+      "name": "opencv4",
+      "default-features": false,
+      "features": [ "jpeg", "png", "webp" ]
+    },
+    "fmt",
+    "cli11",
+    "spdlog"
+  ],
+  "features": {
+    "gui": {
+      "description": "Build with ImGui GUI support (OpenGL backend)",
+      "supports": "!android",
+      "dependencies": [
+        {
+          "name": "imgui",
+          "default-features": false,
+          "features": [ "sdl3-binding", "opengl3-binding", "freetype" ]
+        },
+        "sdl3",
+        "implot",
+        "glad",
+        "nativefiledialog-extended"
+      ]
+    },
+    "d3d11": {
+      "description": "Add Direct3D 11 backend support (Windows only, requires gui feature)",
+      "supports": "windows",
+      "dependencies": [
+        "wil",
+        {
+          "name": "imgui",
+          "default-features": false,
+          "features": [ "dx11-binding" ]
+        }
+      ]
+    },
+    "vulkan": {
+      "description": "Add Vulkan backend support (requires gui feature)",
+      "dependencies": [
+        {
+          "name": "imgui",
+          "default-features": false,
+          "features": [ "vulkan-binding" ]
+        },
+        "vulkan",
+        "vulkan-memory-allocator"
+      ]
+    },
+    "ai-denoise": {
+      "description": "AI denoising for watermark residual cleanup (NCNN + Vulkan GPU)",
+      "dependencies": [
+        "volk"
+      ]
+    }
+  },
+  "overrides": [
+    {
+      "name": "libsystemd",
+      "version": "257.8",
+      "port-version": 1
+    }
+  ],
+  "builtin-baseline": "7e19f3c64cb636ee21f41bfe8558a6dfaae6236f"
+}

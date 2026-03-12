@@ -64,3 +64,35 @@
 [2026-03-12T20:14:39.358Z] Processing image... Target: C:\Users\Abdessamad\Downloads\cleaned_gwt_1773346479358.png
 [2026-03-12T20:14:39.360Z] Spawning: C:\Users\Abdessamad\Desktop\tools\GeminiWatermarkTool\GeminiWatermarkTool.exe
 [2026-03-12T20:14:41.142Z] Success: File saved to C:\Users\Abdessamad\Downloads\cleaned_gwt_1773346479358.png
+[2026-03-12T20:16:21.738Z] Host started
+[2026-03-12T20:16:21.752Z] Processing image... Target: C:\Users\Abdessamad\Downloads\cleaned_gwt_1773346581752.png
+[2026-03-12T20:16:21.754Z] Spawning: C:\Users\Abdessamad\Desktop\tools\GeminiWatermarkTool\GeminiWatermarkTool.exe
+[2026-03-12T20:16:24.315Z] Success: File saved to C:\Users\Abdessamad\Downloads\cleaned_gwt_1773346581752.png
+[2026-03-12T20:17:25.619Z] Host started
+[2026-03-12T20:17:25.626Z] Processing image... Target: C:\Users\Abdessamad\Downloads\cleaned_gwt_1773346645626.png
+[2026-03-12T20:17:25.627Z] Spawning: C:\Users\Abdessamad\Desktop\tools\GeminiWatermarkTool\GeminiWatermarkTool.exe
+[2026-03-12T20:17:26.980Z] Success: File saved to C:\Users\Abdessamad\Downloads\cleaned_gwt_1773346645626.png
+[2026-03-12T20:17:45.607Z] Host started
+[2026-03-12T20:17:45.614Z] Processing image... Target: C:\Users\Abdessamad\Downloads\cleaned_gwt_1773346665614.png
+[2026-03-12T20:17:45.616Z] Spawning: C:\Users\Abdessamad\Desktop\tools\GeminiWatermarkTool\GeminiWatermarkTool.exe
+[2026-03-12T20:17:46.989Z] Success: File saved to C:\Users\Abdessamad\Downloads\cleaned_gwt_1773346665614.png
+[2026-03-12T20:18:56.232Z] Host started
+[2026-03-12T20:18:56.237Z] Processing image... Target: C:\Users\Abdessamad\Downloads\cleaned_gwt_1773346736237.png
+[2026-03-12T20:18:56.240Z] Spawning: C:\Users\Abdessamad\Desktop\tools\GeminiWatermarkTool\GeminiWatermarkTool.exe
+[2026-03-12T20:18:58.052Z] Success: File saved to C:\Users\Abdessamad\Downloads\cleaned_gwt_1773346736237.png
+[2026-03-12T20:19:09.136Z] Host started
+[2026-03-12T20:19:09.143Z] Processing image... Target: C:\Users\Abdessamad\Downloads\cleaned_gwt_1773346749143.png
+[2026-03-12T20:19:09.145Z] Spawning: C:\Users\Abdessamad\Desktop\tools\GeminiWatermarkTool\GeminiWatermarkTool.exe
+[2026-03-12T20:19:11.190Z] Success: File saved to C:\Users\Abdessamad\Downloads\cleaned_gwt_1773346749143.png
+[2026-03-12T20:45:43.173Z] Host started
+[2026-03-12T20:45:43.181Z] Processing image... Target: C:\Users\Abdessamad\Downloads\cleaned_gwt_1773348343181.png
+[2026-03-12T20:45:43.183Z] Spawning: C:\Users\Abdessamad\Desktop\tools\GeminiWatermarkTool\GeminiWatermarkTool.exe
+[2026-03-12T20:45:44.905Z] Success: File saved to C:\Users\Abdessamad\Downloads\cleaned_gwt_1773348343181.png
+[2026-03-12T20:45:50.191Z] Host started
+[2026-03-12T20:45:50.198Z] Processing image... Target: C:\Users\Abdessamad\Downloads\cleaned_gwt_1773348350198.png
+[2026-03-12T20:45:50.200Z] Spawning: C:\Users\Abdessamad\Desktop\tools\GeminiWatermarkTool\GeminiWatermarkTool.exe
+[2026-03-12T20:45:51.429Z] Success: File saved to C:\Users\Abdessamad\Downloads\cleaned_gwt_1773348350198.png
+[2026-03-12T20:54:38.256Z] Host started
+[2026-03-12T20:54:38.262Z] Processing image... Target: C:\Users\Abdessamad\Downloads\cleaned_gwt_1773348878262.png
+[2026-03-12T20:54:38.263Z] Spawning: C:\Users\Abdessamad\Desktop\tools\GeminiWatermarkTool\GeminiWatermarkTool.exe
+[2026-03-12T20:54:39.685Z] Success: File saved to C:\Users\Abdessamad\Downloads\cleaned_gwt_1773348878262.png

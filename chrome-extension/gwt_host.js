@@ -57,7 +57,16 @@ async function handleRequest(msg) {
         }
         
         const exePath = path.join(__dirname, '..', 'GeminiWatermarkTool.exe');
-        const args = ['-i', tempIn, '-o', finalPath, '--remove', '--denoise', 'ai', '--threshold', '0.10'];
+        const args = [
+            '-i', tempIn, 
+            '-o', finalPath, 
+            '--remove', 
+            '--denoise', 'ai', 
+            '--threshold', '0.25',
+            '--fallback-region', 'br:auto',
+            '--snap',
+            '--snap-threshold', '0.25'
+        ];
         
         log(`Spawning: ${exePath}`);
         const gwtProcess = spawn(exePath, args);

@@ -31,6 +31,40 @@ async function getOffscreenBase64(url) {
   });
 }
 
+// Fallback: extract image data directly from the tab's context
+// This is necessary for blob: URLs or images that are strictly protected
+async function tabContextFetch(tabId, url) {
+  const results = await chrome.scripting.executeScript({
+    target: { tabId: tabId },
+    func: (targetUrl) => {
+      return new Promise((resolve, reject) => {
+        // Find the image in the page that matches the clicked URL
+        const images = Array.from(document.querySelectorAll('img'));
+        const img = images.find(i => i.src === targetUrl);
+        
+        if (!img) return reject("Image not found in page context");
+
+        try {
+          const canvas = document.createElement('canvas');
+          canvas.width = img.naturalWidth;
+          canvas.height = img.naturalHeight;
+          const ctx = canvas.getContext('2d');
+          ctx.drawImage(img, 0, 0);
+          resolve(canvas.toDataURL('image/png'));
+        } catch (e) {
+          reject("Canvas extraction failed (CORS or other issue): " + e.message);
+        }
+      });
+    },
+    args: [url]
+  });
+
+  if (results && results[0] && results[0].result) {
+    return results[0].result;
+  }
+  throw new Error("Failed to extract image from page context");
+}
+
 chrome.contextMenus.onClicked.addListener(async (info, tab) => {
   if (info.menuItemId === "remove-watermark") {
     const imageUrl = info.srcUrl;
@@ -46,7 +80,16 @@ chrome.contextMenus.onClicked.addListener(async (info, tab) => {
     });
     
     try {
-      const dataUri = await getOffscreenBase64(imageUrl);
+      let dataUri;
+      
+      // Attempt 1: Standard Offscreen Fetch
+      try {
+        dataUri = await getOffscreenBase64(imageUrl);
+      } catch (e) {
+        console.warn("Offscreen fetch failed, trying tab context fallback...", e);
+        // Attempt 2: Direct extraction from tab (for blobs/protected images)
+        dataUri = await tabContextFetch(tab.id, imageUrl);
+      }
       
       chrome.notifications.update(notificationId, {
         message: 'Processing image locally...'
@@ -84,8 +127,9 @@ chrome.contextMenus.onClicked.addListener(async (info, tab) => {
     } catch (e) {
       chrome.notifications.update(notificationId, {
         title: 'Fetch Error',
-        message: 'Error: ' + e.message
+        message: 'Unable to access image. Try clicking the image to enlarge it first.'
       });
+      console.error("All fetch methods failed:", e);
     }
   }
 });

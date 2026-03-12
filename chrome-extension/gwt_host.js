@@ -13,6 +13,9 @@ function log(msg) {
 
 log("Host started");
 
+let server = null;
+let currentImagePath = null;
+
 let inputBuffer = Buffer.alloc(0);
 process.stdin.on('readable', () => {
     let chunk;
@@ -37,17 +40,21 @@ process.stdin.on('readable', () => {
 });
 
 async function handleRequest(msg) {
+    if (msg.type === 'stop-server') {
+        if (server) {
+            server.close();
+            server = null;
+            log("Server stopped by request");
+        }
+        return;
+    }
+
     try {
         const imageUrl = msg.url;
         const tempIn = path.join(__dirname, 'temp_in.png');
+        const tempOut = path.join(__dirname, 'temp_out.png');
         
-        // Save to Downloads folder to bypass 1MB pipe limit
-        const downloadsDir = path.join(process.env.USERPROFILE, 'Downloads');
-        const timestamp = Date.now();
-        const outputFilename = `cleaned_gwt_${timestamp}.png`;
-        const finalPath = path.join(downloadsDir, outputFilename);
-        
-        log(`Processing image... Target: ${finalPath}`);
+        log(`Processing image for preview...`);
 
         if (imageUrl.startsWith('data:')) {
             const matches = imageUrl.match(/^data:([A-Za-z-+\/]+);base64,(.+)$/);
@@ -56,38 +63,61 @@ async function handleRequest(msg) {
             await downloadFile(imageUrl, tempIn);
         }
         
-        const exePath = path.join(__dirname, '..', 'GeminiWatermarkTool.exe');
-        const args = [
-            '-i', tempIn, 
-            '-o', finalPath, 
-            '--remove', 
-            '--denoise', 'ai', 
-            '--threshold', '0.25',
-            '--fallback-region', 'br:auto',
-            '--snap',
-            '--snap-threshold', '0.25'
-        ];
+        const exePath = path.join(__dirname, 'GeminiWatermarkTool.exe');
+        const finalExePath = fs.existsSync(exePath) ? exePath : path.join(__dirname, '..', 'GeminiWatermarkTool.exe');
         
-        log(`Spawning: ${exePath}`);
-        const gwtProcess = spawn(exePath, args);
+        const args = ['-i', tempIn, '-o', tempOut, '--remove', '--denoise', 'ai', '--threshold', '0.25', '--snap'];
+        
+        const gwtProcess = spawn(finalExePath, args);
         
         gwtProcess.on('close', (code) => {
-            if (code === 0 && fs.existsSync(finalPath)) {
-                log(`Success: File saved to ${finalPath}`);
-                sendResponse({ 
-                    success: true, 
-                    filePath: finalPath,
-                    fileName: outputFilename
-                });
-                try { fs.unlinkSync(tempIn); } catch(e){}
+            if (code === 0 && fs.existsSync(tempOut)) {
+                currentImagePath = tempOut;
+                startPreviewServer();
             } else {
-                sendResponse({ success: false, error: "GWT process failed or output not found." });
+                sendResponse({ success: false, error: "GWT process failed." });
             }
         });
     } catch (e) {
         log(`Fatal error: ${e.message}`);
         sendResponse({ success: false, error: e.message });
     }
+}
+
+function startPreviewServer() {
+    if (server) server.close();
+
+    server = http.createServer((req, res) => {
+        if (currentImagePath && fs.existsSync(currentImagePath)) {
+            res.writeHead(200, { 
+                'Content-Type': 'image/png',
+                'Access-Control-Allow-Origin': '*' // Allow extension to fetch
+            });
+            fs.createReadStream(currentImagePath).pipe(res);
+        } else {
+            res.writeHead(404);
+            res.end();
+        }
+    });
+
+    server.listen(0, '127.0.0.1', () => {
+        const port = server.address().port;
+        const previewUrl = `http://localhost:${port}/preview.png`;
+        log(`Preview server started at ${previewUrl}`);
+        sendResponse({ 
+            success: true, 
+            previewUrl: previewUrl
+        });
+    });
+
+    // Auto-stop server after 5 mins
+    setTimeout(() => {
+        if (server) {
+            server.close();
+            server = null;
+            log("Server auto-stopped after timeout");
+        }
+    }, 300000);
 }
 
 function downloadFile(url, dest) {

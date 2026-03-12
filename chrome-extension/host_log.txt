@@ -96,3 +96,24 @@
 [2026-03-12T20:54:38.262Z] Processing image... Target: C:\Users\Abdessamad\Downloads\cleaned_gwt_1773348878262.png
 [2026-03-12T20:54:38.263Z] Spawning: C:\Users\Abdessamad\Desktop\tools\GeminiWatermarkTool\GeminiWatermarkTool.exe
 [2026-03-12T20:54:39.685Z] Success: File saved to C:\Users\Abdessamad\Downloads\cleaned_gwt_1773348878262.png
+[2026-03-12T21:04:34.169Z] Host started
+[2026-03-12T21:04:34.177Z] Processing image... Target: C:\Users\Abdessamad\Downloads\cleaned_gwt_1773349474177.png
+[2026-03-12T21:04:34.180Z] Executable path: C:\Users\Abdessamad\Desktop\tools\GeminiWatermarkTool\chrome-extension\GeminiWatermarkTool.exe
+[2026-03-12T21:04:34.180Z] Spawning: C:\Users\Abdessamad\Desktop\tools\GeminiWatermarkTool\chrome-extension\GeminiWatermarkTool.exe
+[2026-03-12T21:04:35.941Z] Success: File saved to C:\Users\Abdessamad\Downloads\cleaned_gwt_1773349474177.png
+[2026-03-12T21:07:00.280Z] Host started
+[2026-03-12T21:07:00.288Z] Processing image for preview...
+[2026-03-12T21:07:01.881Z] Preview server started at http://localhost:2410/preview.png
+[2026-03-12T21:07:07.882Z] Host started
+[2026-03-12T21:07:13.432Z] Host started
+[2026-03-12T21:07:13.439Z] Processing image for preview...
+[2026-03-12T21:07:14.973Z] Preview server started at http://localhost:7871/preview.png
+[2026-03-12T21:07:22.511Z] Host started
+[2026-03-12T21:07:48.334Z] Host started
+[2026-03-12T21:07:48.342Z] Processing image for preview...
+[2026-03-12T21:07:49.880Z] Preview server started at http://localhost:8362/preview.png
+[2026-03-12T21:08:27.720Z] Host started
+[2026-03-12T21:08:31.637Z] Host started
+[2026-03-12T21:08:31.644Z] Processing image for preview...
+[2026-03-12T21:08:33.272Z] Preview server started at http://localhost:11561/preview.png
+[2026-03-12T21:08:41.195Z] Host started

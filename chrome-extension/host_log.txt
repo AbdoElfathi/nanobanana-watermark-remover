@@ -1,119 +1,19 @@
-[2026-03-12T20:13:14.648Z] Host started
-[2026-03-12T20:13:14.654Z] Received request for URL: data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4R/+RXhpZgAASUkqAAgAAAADABIBAwABAAAAAQAAADEBAgAHA...
-[2026-03-12T20:13:14.655Z] Processing image...
-[2026-03-12T20:13:14.656Z] Handling Data URI
-[2026-03-12T20:13:14.658Z] Executable path: C:\Users\Abdessamad\Desktop\tools\GeminiWatermarkTool\GeminiWatermarkTool.exe
-[2026-03-12T20:13:14.658Z] Spawning: C:\Users\Abdessamad\Desktop\tools\GeminiWatermarkTool\GeminiWatermarkTool.exe -i C:\Users\Abdessamad\Desktop\tools\GeminiWatermarkTool\chrome-extension\temp_in.png -o C:\Users\Abdessamad\Desktop\tools\GeminiWatermarkTool\chrome-extension\temp_out.png --remove --denoise ai --threshold 0.10
-[2026-03-12T20:13:15.955Z] Process closed with code 0. Output: [2026-03-12 20:13:14.687] [gwt] [info] Loaded embedded background captures (standalone mode)
-[0 NVIDIA GeForce GTX 1050 Ti]  queueC=2[8]  queueT=1[2]
-[0 NVIDIA GeForce GTX 1050 Ti]  fp16-p/s/u/a=1/1/1/0  int8-p/s/u/a=1/1/1/1  bf16-p/s=1/0
-[0 NVIDIA GeForce GTX 1050 Ti]  subgroup=32(32~32)  ops=1/1/1/1/1/1/1/1/1/1
-[0 NVIDIA GeForce GTX 1050 Ti]  fp16-cm=0  int8-cm=0  bf16-cm=0  fp8-cm=0
-[2026-03-12 20:13:14.887] [gwt] [info] NcnnDenoiser: Vulkan GPU #0 - NVIDIA GeForce GTX 1050 Ti
-[1 Intel(R) HD Graphics 630]  queueC=0[1]  queueT=0[1]
-[1 Intel(R) HD Graphics 630]  fp16-p/s/u/a=1/1/1/1  int8-p/s/u/a=1/1/1/1  bf16-p/s=1/0
-[1 Intel(R) HD Graphics 630]  subgroup=32(8~32)  ops=1/1/1/1/1/1/1/1/0/0
-[1 Intel(R) HD Graphics 630]  fp16-cm=0  int8-cm=0  bf16-cm=0  fp8-cm=0
-[2026-03-12 20:13:15.050] [gwt] [info] NcnnDenoiser: Param loaded (1464 bytes)
-[2026-03-12 20:13:15.308] [gwt] [info] NcnnDenoiser: Model loaded (1340124 bytes)
-[2026-03-12 20:13:15.308] [gwt] [info] NcnnDenoiser: Initialized (NVIDIA GeForce GTX 1050 Ti)
-[2026-03-12 20:13:15.321] [gwt] [info] Processing: temp_in.png (928x1152)
-[2026-03-12 20:13:15.322] [gwt] [info] Detected (76%), region: (848,1072) 48x48
-[2026-03-12 20:13:15.343] [gwt] [info] NcnnDenoiser: sigma=50, strength=120%, roi=112x112, 2304 edge pixels, 21.2ms (NVIDIA GeForce GTX 1050 Ti)
-[38;2;128;128;128mAuto-detection enabled (threshold: 10%)
-[0m[38;2;128;128;128mDenoise: AI (strength=120%)
-[0m
-[38;2;000;128;000m[OK] [0mtemp_in.png[38;2;128;128;128m (76%)[0m[38;2;128;128;128m +AI[0m
-
-[2026-03-12T20:13:15.956Z] Success, reading output file.
-[2026-03-12T20:13:15.968Z] Sent response (success: true)
-[2026-03-12T20:13:29.134Z] Host started
-[2026-03-12T20:13:29.149Z] Received request for URL: data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAMCAgoKCgoKCgoKCgoKCgoICgoKCggICAgICAgICAgIC...
-[2026-03-12T20:13:29.150Z] Processing image...
-[2026-03-12T20:13:29.151Z] Handling Data URI
-[2026-03-12T20:13:29.153Z] Executable path: C:\Users\Abdessamad\Desktop\tools\GeminiWatermarkTool\GeminiWatermarkTool.exe
-[2026-03-12T20:13:29.153Z] Spawning: C:\Users\Abdessamad\Desktop\tools\GeminiWatermarkTool\GeminiWatermarkTool.exe -i C:\Users\Abdessamad\Desktop\tools\GeminiWatermarkTool\chrome-extension\temp_in.png -o C:\Users\Abdessamad\Desktop\tools\GeminiWatermarkTool\chrome-extension\temp_out.png --remove --denoise ai --threshold 0.10
-[2026-03-12T20:13:30.783Z] Process closed with code 0. Output: [2026-03-12 20:13:29.191] [gwt] [info] Loaded embedded background captures (standalone mode)
-[0 NVIDIA GeForce GTX 1050 Ti]  queueC=2[8]  queueT=1[2]
-[0 NVIDIA GeForce GTX 1050 Ti]  fp16-p/s/u/a=1/1/1/0  int8-p/s/u/a=1/1/1/1  bf16-p/s=1/0
-[0 NVIDIA GeForce GTX 1050 Ti]  subgroup=32(32~32)  ops=1/1/1/1/1/1/1/1/1/1
-[0 NVIDIA GeForce GTX 1050 Ti]  fp16-cm=0  int8-cm=0  bf16-cm=0  fp8-cm=0
-[2026-03-12 20:13:29.443] [gwt] [info] NcnnDenoiser: Vulkan GPU #0 - NVIDIA GeForce GTX 1050 Ti
-[1 Intel(R) HD Graphics 630]  queueC=0[1]  queueT=0[1]
-[1 Intel(R) HD Graphics 630]  fp16-p/s/u/a=1/1/1/1  int8-p/s/u/a=1/1/1/1  bf16-p/s=1/0
-[1 Intel(R) HD Graphics 630]  subgroup=32(8~32)  ops=1/1/1/1/1/1/1/1/0/0
-[1 Intel(R) HD Graphics 630]  fp16-cm=0  int8-cm=0  bf16-cm=0  fp8-cm=0
-[2026-03-12 20:13:29.620] [gwt] [info] NcnnDenoiser: Param loaded (1464 bytes)
-[2026-03-12 20:13:30.012] [gwt] [info] NcnnDenoiser: Model loaded (1340124 bytes)
-[2026-03-12 20:13:30.012] [gwt] [info] NcnnDenoiser: Initialized (NVIDIA GeForce GTX 1050 Ti)
-[2026-03-12 20:13:30.030] [gwt] [info] Processing: temp_in.png (825x1024)
-[2026-03-12 20:13:30.030] [gwt] [info] Detected (24%), region: (745,944) 48x48
-[2026-03-12 20:13:30.057] [gwt] [info] NcnnDenoiser: sigma=50, strength=120%, roi=112x112, 2304 edge pixels, 25.8ms (NVIDIA GeForce GTX 1050 Ti)
-[38;2;128;128;128mAuto-detection enabled (threshold: 10%)
-[0m[38;2;128;128;128mDenoise: AI (strength=120%)
-[0m
-[38;2;000;128;000m[OK] [0mtemp_in.png[38;2;128;128;128m (24%)[0m[38;2;128;128;128m +AI[0m
-
-[2026-03-12T20:13:30.795Z] Success, reading output file.
-[2026-03-12T20:13:30.807Z] Sent response (success: true)
-[2026-03-12T20:14:23.894Z] Host started
-[2026-03-12T20:14:23.913Z] Processing image... Target: C:\Users\Abdessamad\Downloads\cleaned_gwt_1773346463913.png
-[2026-03-12T20:14:23.914Z] Spawning: C:\Users\Abdessamad\Desktop\tools\GeminiWatermarkTool\GeminiWatermarkTool.exe
-[2026-03-12T20:14:25.197Z] Success: File saved to C:\Users\Abdessamad\Downloads\cleaned_gwt_1773346463913.png
-[2026-03-12T20:14:39.350Z] Host started
-[2026-03-12T20:14:39.358Z] Processing image... Target: C:\Users\Abdessamad\Downloads\cleaned_gwt_1773346479358.png
-[2026-03-12T20:14:39.360Z] Spawning: C:\Users\Abdessamad\Desktop\tools\GeminiWatermarkTool\GeminiWatermarkTool.exe
-[2026-03-12T20:14:41.142Z] Success: File saved to C:\Users\Abdessamad\Downloads\cleaned_gwt_1773346479358.png
-[2026-03-12T20:16:21.738Z] Host started
-[2026-03-12T20:16:21.752Z] Processing image... Target: C:\Users\Abdessamad\Downloads\cleaned_gwt_1773346581752.png
-[2026-03-12T20:16:21.754Z] Spawning: C:\Users\Abdessamad\Desktop\tools\GeminiWatermarkTool\GeminiWatermarkTool.exe
-[2026-03-12T20:16:24.315Z] Success: File saved to C:\Users\Abdessamad\Downloads\cleaned_gwt_1773346581752.png
-[2026-03-12T20:17:25.619Z] Host started
-[2026-03-12T20:17:25.626Z] Processing image... Target: C:\Users\Abdessamad\Downloads\cleaned_gwt_1773346645626.png
-[2026-03-12T20:17:25.627Z] Spawning: C:\Users\Abdessamad\Desktop\tools\GeminiWatermarkTool\GeminiWatermarkTool.exe
-[2026-03-12T20:17:26.980Z] Success: File saved to C:\Users\Abdessamad\Downloads\cleaned_gwt_1773346645626.png
-[2026-03-12T20:17:45.607Z] Host started
-[2026-03-12T20:17:45.614Z] Processing image... Target: C:\Users\Abdessamad\Downloads\cleaned_gwt_1773346665614.png
-[2026-03-12T20:17:45.616Z] Spawning: C:\Users\Abdessamad\Desktop\tools\GeminiWatermarkTool\GeminiWatermarkTool.exe
-[2026-03-12T20:17:46.989Z] Success: File saved to C:\Users\Abdessamad\Downloads\cleaned_gwt_1773346665614.png
-[2026-03-12T20:18:56.232Z] Host started
-[2026-03-12T20:18:56.237Z] Processing image... Target: C:\Users\Abdessamad\Downloads\cleaned_gwt_1773346736237.png
-[2026-03-12T20:18:56.240Z] Spawning: C:\Users\Abdessamad\Desktop\tools\GeminiWatermarkTool\GeminiWatermarkTool.exe
-[2026-03-12T20:18:58.052Z] Success: File saved to C:\Users\Abdessamad\Downloads\cleaned_gwt_1773346736237.png
-[2026-03-12T20:19:09.136Z] Host started
-[2026-03-12T20:19:09.143Z] Processing image... Target: C:\Users\Abdessamad\Downloads\cleaned_gwt_1773346749143.png
-[2026-03-12T20:19:09.145Z] Spawning: C:\Users\Abdessamad\Desktop\tools\GeminiWatermarkTool\GeminiWatermarkTool.exe
-[2026-03-12T20:19:11.190Z] Success: File saved to C:\Users\Abdessamad\Downloads\cleaned_gwt_1773346749143.png
-[2026-03-12T20:45:43.173Z] Host started
-[2026-03-12T20:45:43.181Z] Processing image... Target: C:\Users\Abdessamad\Downloads\cleaned_gwt_1773348343181.png
-[2026-03-12T20:45:43.183Z] Spawning: C:\Users\Abdessamad\Desktop\tools\GeminiWatermarkTool\GeminiWatermarkTool.exe
-[2026-03-12T20:45:44.905Z] Success: File saved to C:\Users\Abdessamad\Downloads\cleaned_gwt_1773348343181.png
-[2026-03-12T20:45:50.191Z] Host started
-[2026-03-12T20:45:50.198Z] Processing image... Target: C:\Users\Abdessamad\Downloads\cleaned_gwt_1773348350198.png
-[2026-03-12T20:45:50.200Z] Spawning: C:\Users\Abdessamad\Desktop\tools\GeminiWatermarkTool\GeminiWatermarkTool.exe
-[2026-03-12T20:45:51.429Z] Success: File saved to C:\Users\Abdessamad\Downloads\cleaned_gwt_1773348350198.png
-[2026-03-12T20:54:38.256Z] Host started
-[2026-03-12T20:54:38.262Z] Processing image... Target: C:\Users\Abdessamad\Downloads\cleaned_gwt_1773348878262.png
-[2026-03-12T20:54:38.263Z] Spawning: C:\Users\Abdessamad\Desktop\tools\GeminiWatermarkTool\GeminiWatermarkTool.exe
-[2026-03-12T20:54:39.685Z] Success: File saved to C:\Users\Abdessamad\Downloads\cleaned_gwt_1773348878262.png
-[2026-03-12T21:04:34.169Z] Host started
-[2026-03-12T21:04:34.177Z] Processing image... Target: C:\Users\Abdessamad\Downloads\cleaned_gwt_1773349474177.png
-[2026-03-12T21:04:34.180Z] Executable path: C:\Users\Abdessamad\Desktop\tools\GeminiWatermarkTool\chrome-extension\GeminiWatermarkTool.exe
-[2026-03-12T21:04:34.180Z] Spawning: C:\Users\Abdessamad\Desktop\tools\GeminiWatermarkTool\chrome-extension\GeminiWatermarkTool.exe
-[2026-03-12T21:04:35.941Z] Success: File saved to C:\Users\Abdessamad\Downloads\cleaned_gwt_1773349474177.png
-[2026-03-12T21:07:00.280Z] Host started
-[2026-03-12T21:07:00.288Z] Processing image for preview...
-[2026-03-12T21:07:01.881Z] Preview server started at http://localhost:2410/preview.png
-[2026-03-12T21:07:07.882Z] Host started
-[2026-03-12T21:07:13.432Z] Host started
-[2026-03-12T21:07:13.439Z] Processing image for preview...
-[2026-03-12T21:07:14.973Z] Preview server started at http://localhost:7871/preview.png
-[2026-03-12T21:07:22.511Z] Host started
-[2026-03-12T21:07:48.334Z] Host started
-[2026-03-12T21:07:48.342Z] Processing image for preview...
-[2026-03-12T21:07:49.880Z] Preview server started at http://localhost:8362/preview.png
-[2026-03-12T21:08:27.720Z] Host started
-[2026-03-12T21:08:31.637Z] Host started
-[2026-03-12T21:08:31.644Z] Processing image for preview...
-[2026-03-12T21:08:33.272Z] Preview server started at http://localhost:11561/preview.png
-[2026-03-12T21:08:41.195Z] Host started
+[2026-03-12T21:30:53.436Z] Host started
+[2026-03-12T21:30:53.447Z] Processing image for preview...
+[2026-03-12T21:30:54.694Z] Preview server started at http://localhost:5026/preview.png
+[2026-03-12T21:31:02.238Z] Server auto-stopped after timeout
+[2026-03-12T21:31:10.252Z] Host started
+[2026-03-12T21:31:43.742Z] Server auto-stopped after timeout
+[2026-03-12T21:31:47.262Z] Host started
+[2026-03-12T21:31:47.299Z] Processing image for preview...
+[2026-03-12T21:31:48.554Z] Preview server started at http://localhost:14140/preview.png
+[2026-03-12T21:32:57.173Z] Host started
+[2026-03-12T21:33:02.636Z] Host started
+[2026-03-12T21:33:02.649Z] Processing image for preview...
+[2026-03-12T21:33:03.863Z] Preview server started at http://localhost:8562/preview.png
+[2026-03-12T21:33:06.822Z] Host started
+[2026-03-12T21:33:30.810Z] Host started
+[2026-03-12T21:33:30.837Z] Processing image for preview...
+[2026-03-12T21:33:32.444Z] Preview server started at http://localhost:9807/preview.png
+[2026-03-12T21:33:33.062Z] Server auto-stopped after timeout
+[2026-03-12T21:33:36.258Z] Host started

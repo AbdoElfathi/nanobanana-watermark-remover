@@ -2,6 +2,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const os = require('os');
 const { spawn } = require('child_process');
 const https = require('https');
 const http = require('http');
@@ -11,7 +12,7 @@ function log(msg) {
     fs.appendFileSync(logFile, `[${new Date().toISOString()}] ${msg}\n`);
 }
 
-log("Host started");
+log("Host started on " + process.platform);
 
 let server = null;
 let currentImagePath = null;
@@ -41,11 +42,7 @@ process.stdin.on('readable', () => {
 
 async function handleRequest(msg) {
     if (msg.type === 'stop-server') {
-        if (server) {
-            server.close();
-            server = null;
-            log("Server stopped by request");
-        }
+        if (server) { server.close(); server = null; log("Server stopped"); }
         return;
     }
 
@@ -54,8 +51,6 @@ async function handleRequest(msg) {
         const tempIn = path.join(__dirname, 'temp_in.png');
         const tempOut = path.join(__dirname, 'temp_out.png');
         
-        log(`Processing image for preview...`);
-
         if (imageUrl.startsWith('data:')) {
             const matches = imageUrl.match(/^data:([A-Za-z-+\/]+);base64,(.+)$/);
             fs.writeFileSync(tempIn, Buffer.from(matches[2], 'base64'));
@@ -63,12 +58,19 @@ async function handleRequest(msg) {
             await downloadFile(imageUrl, tempIn);
         }
         
-        const exePath = path.join(__dirname, 'GeminiWatermarkTool.exe');
-        const finalExePath = fs.existsSync(exePath) ? exePath : path.join(__dirname, '..', 'GeminiWatermarkTool.exe');
+        // Handle Cross-Platform Binary Name
+        const isWin = process.platform === 'win32';
+        const binName = isWin ? 'GeminiWatermarkTool.exe' : 'GeminiWatermarkTool';
+        
+        let exePath = path.join(__dirname, binName);
+        if (!fs.existsSync(exePath)) {
+            exePath = path.join(__dirname, '..', binName);
+        }
+        
+        log(`Using binary: ${exePath}`);
         
         const args = ['-i', tempIn, '-o', tempOut, '--remove', '--denoise', 'ai', '--threshold', '0.25', '--snap'];
-        
-        const gwtProcess = spawn(finalExePath, args);
+        const gwtProcess = spawn(exePath, args);
         
         gwtProcess.on('close', (code) => {
             if (code === 0 && fs.existsSync(tempOut)) {
@@ -86,38 +88,19 @@ async function handleRequest(msg) {
 
 function startPreviewServer() {
     if (server) server.close();
-
     server = http.createServer((req, res) => {
         if (currentImagePath && fs.existsSync(currentImagePath)) {
-            res.writeHead(200, { 
-                'Content-Type': 'image/png',
-                'Access-Control-Allow-Origin': '*' // Allow extension to fetch
-            });
+            res.writeHead(200, { 'Content-Type': 'image/png', 'Access-Control-Allow-Origin': '*' });
             fs.createReadStream(currentImagePath).pipe(res);
-        } else {
-            res.writeHead(404);
-            res.end();
-        }
+        } else { res.writeHead(404); res.end(); }
     });
 
     server.listen(0, '127.0.0.1', () => {
         const port = server.address().port;
-        const previewUrl = `http://localhost:${port}/preview.png`;
-        log(`Preview server started at ${previewUrl}`);
-        sendResponse({ 
-            success: true, 
-            previewUrl: previewUrl
-        });
+        sendResponse({ success: true, previewUrl: `http://localhost:${port}/preview.png` });
     });
 
-    // Auto-stop server after 5 mins
-    setTimeout(() => {
-        if (server) {
-            server.close();
-            server = null;
-            log("Server auto-stopped after timeout");
-        }
-    }, 300000);
+    setTimeout(() => { if (server) { server.close(); server = null; } }, 300000);
 }
 
 function downloadFile(url, dest) {

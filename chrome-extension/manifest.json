@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "Gemini Watermark Remover",
+  "version": "1.0",
+  "description": "Right-click to remove Gemini watermarks from images",
+  "permissions": ["contextMenus", "nativeMessaging", "downloads", "notifications", "offscreen"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  }
+}

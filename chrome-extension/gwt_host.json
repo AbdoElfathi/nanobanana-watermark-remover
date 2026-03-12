@@ -1,0 +1,9 @@
+{
+  "name": "com.gwt.native_host",
+  "description": "Gemini Watermark Tool Native Messaging Host",
+  "path": "C:\\Users\\Abdessamad\\Desktop\\tools\\GeminiWatermarkTool\\chrome-extension\\gwt_host.bat",
+  "type": "stdio",
+  "allowed_origins": [
+    "chrome-extension://dlcglfnbdmbgcalkggnmlfljkmemgcfe/"
+  ]
+}
